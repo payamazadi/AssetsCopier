@@ -1,0 +1,8 @@
+D:\Code\DealerOn\Platform\Dealeron.Platform.Site.AssetsCopier\bin\Release\Dealeron.Platform.Site.AssetsCopier.exe.config
+D:\Code\DealerOn\Platform\Dealeron.Platform.Site.AssetsCopier\bin\Release\Dealeron.Platform.Site.AssetsCopier.exe
+D:\Code\DealerOn\Platform\Dealeron.Platform.Site.AssetsCopier\bin\Release\Dealeron.Platform.Site.AssetsCopier.pdb
+D:\Code\DealerOn\Platform\Dealeron.Platform.Site.AssetsCopier\obj\Release\Dealeron.Platform.Site.AssetsCopier.ProjectInstaller.resources
+D:\Code\DealerOn\Platform\Dealeron.Platform.Site.AssetsCopier\obj\Release\Dealeron.Platform.Site.AssetsCopier.AssetsCopier.resources
+D:\Code\DealerOn\Platform\Dealeron.Platform.Site.AssetsCopier\obj\Release\Dealeron.Platform.Site.AssetsCopier.csproj.GenerateResource.Cache
+D:\Code\DealerOn\Platform\Dealeron.Platform.Site.AssetsCopier\obj\Release\Dealeron.Platform.Site.AssetsCopier.exe
+D:\Code\DealerOn\Platform\Dealeron.Platform.Site.AssetsCopier\obj\Release\Dealeron.Platform.Site.AssetsCopier.pdb
