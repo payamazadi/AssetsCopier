@@ -151,7 +151,7 @@ namespace AssetsCopier
 					break;
 				case WatcherChangeTypes.Renamed:
 					var f = (RenamedEventArgs) e;
-				  LogIt("Need to rename.." + f.OldFullPath + ", " + f.FullPath);
+					LogIt("Need to rename.." + f.OldFullPath + ", " + f.FullPath);
 					File.Delete(watcher.DestinationRoot + "\\" + f.OldName);
 					File.Copy(e.FullPath, watcher.DestinationRoot + "\\" + e.Name, true);
 					break;
