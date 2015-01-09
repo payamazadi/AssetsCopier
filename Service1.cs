@@ -9,11 +9,10 @@ namespace AssetsCopier
 {
 	public partial class AssetsCopier : ServiceBase
 	{
-    // ReSharper disable FieldCanBeMadeReadOnly.Local
+		// ReSharper disable FieldCanBeMadeReadOnly.Local
 		private List<FileSystemWatcher> _watchers = new List<FileSystemWatcher>();
-		private DateTime _lastChange = DateTime.MinValue;
 		private Dictionary<string, DateTime> _changedFileTimes = new Dictionary<string, DateTime>(); 
-    // ReSharper restore FieldCanBeMadeReadOnly.Local
+		// ReSharper restore FieldCanBeMadeReadOnly.Local
 
 		public AssetsCopier()
 		{
@@ -152,14 +151,14 @@ namespace AssetsCopier
 					break;
 				case WatcherChangeTypes.Renamed:
 			    var f = (RenamedEventArgs) e;
-					LogIt("Need to rename.." + f.OldFullPath + ", " + f.FullPath);
+				  LogIt("Need to rename.." + f.OldFullPath + ", " + f.FullPath);
           File.Delete(watcher.DestinationRoot + "\\" + f.OldName);
           File.Copy(e.FullPath, watcher.DestinationRoot + "\\" + e.Name, true);
 					break;
-				// ReSharper disable RedundantEmptyDefaultSwitchBranch
+					// ReSharper disable RedundantEmptyDefaultSwitchBranch
 				default:
 					break;
-				// ReSharper restore RedundantEmptyDefaultSwitchBranch
+					// ReSharper restore RedundantEmptyDefaultSwitchBranch
 			}
 			_changedFileTimes[e.FullPath] = lastChange;
 		}
@@ -169,12 +168,12 @@ namespace AssetsCopier
 			if (source.Equals(prepend))
 				return;
 
-			string furthest = source.Substring(0, source.LastIndexOf("\\", System.StringComparison.Ordinal));
+			string furthest = source.Substring(0, source.LastIndexOf("\\", StringComparison.Ordinal));
 			string destination = furthest.Replace(prepend, destinationRoot);
 
 			if (Directory.Exists(destination))
 				return;
-			MimicStructure(furthest.Substring(0, furthest.LastIndexOf("\\", System.StringComparison.Ordinal) + 1), prepend, destinationRoot);
+			MimicStructure(furthest.Substring(0, furthest.LastIndexOf("\\", StringComparison.Ordinal) + 1), prepend, destinationRoot);
 			Console.WriteLine("Would like to create " + destination);
 			Directory.CreateDirectory(destination);
 		}
