@@ -150,15 +150,14 @@ namespace AssetsCopier
 					File.Delete(watcher.DestinationRoot + "\\" + e.Name);
 					break;
 				case WatcherChangeTypes.Renamed:
-			    var f = (RenamedEventArgs) e;
+					var f = (RenamedEventArgs) e;
 				  LogIt("Need to rename.." + f.OldFullPath + ", " + f.FullPath);
-          File.Delete(watcher.DestinationRoot + "\\" + f.OldName);
-          File.Copy(e.FullPath, watcher.DestinationRoot + "\\" + e.Name, true);
+					File.Delete(watcher.DestinationRoot + "\\" + f.OldName);
+					File.Copy(e.FullPath, watcher.DestinationRoot + "\\" + e.Name, true);
 					break;
-					// ReSharper disable RedundantEmptyDefaultSwitchBranch
 				default:
+					LogIt("Should never get here! Unmatched file system event change type!");
 					break;
-					// ReSharper restore RedundantEmptyDefaultSwitchBranch
 			}
 			_changedFileTimes[e.FullPath] = lastChange;
 		}
